@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col"> image</th>
+          <th scope="col">first name</th>
+          <th scope="col">Lastname</th>
+          <th scope="col">Email</th>
+          <th scope="col">Address</th>
+          <th scope="col">Edit</th>
+          <th scope="col">Delete</th>
+
+
+        </tr>
+                {% for item in show %}
+      <tbody>
+        <tr>
+          <td><img src="{{ item.image.url }}"  style="width:50px;height:40px;"></td>
+          <td>{{ item.fname }}</td>
+          <td>{{ item.lname }}</td>
+          <td>{{ item.email }}</td>
+          <td>{{ item.address }}</td>
+            <td><a href="{% url 'student:update' item.pk %}" >Edit</a></td>
+          <td><a href="{% url 'student:delete' item.pk %}" onclick="myFunction()">Delete</a></td>
+        </tr>
+      </tbody>
+            {% endfor %}
+</table>
+{% endblock %}
