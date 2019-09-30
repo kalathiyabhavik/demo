@@ -17,12 +17,14 @@ from django.urls import path
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
-
+from django.contrib.auth.views import LoginView
 app_name = 'student'
 
 urlpatterns = [
-    path('', views.home, name='home'),
+    path('', views.login, name='login'),
+    path('home', views.home, name='home'),
     path('add', views.add, name='add'),
-    path('update/<int:pk>/',views.update, name='update'),
-    path('delete/<int:pk>/',views.delete,name='delete')
+    path('update/<int:pk>/', views.update, name='update'),
+    path('delete/<int:pk>/', views.delete,name='delete'),
+    path('signup', views.signup, name='signup')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
