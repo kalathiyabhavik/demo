@@ -1,18 +1,15 @@
 from django.shortcuts import render, redirect,  get_object_or_404
 from .forms import StudentForm
 from .models import Student
-from django.contrib.auth import login, authenticate
-from django.contrib.auth.models import User
-from django.contrib.auth import login as auth_login
 from .forms import UserSignupForm
-from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
-
-
+@login_required(login_url='login')
 def home(request):
+    current_user = request.user.id
 
-    show = Student.objects.all()
-    return render(request, 'home.html', {'show': show})
+    show = Student.objects.filter(user = request.user.id)
+    return render(request, 'home.html', {'show': show , 'name': current_user})
 
 
 def signup(request):
@@ -20,7 +17,6 @@ def signup(request):
         form = UserSignupForm(request.POST)
         if form.is_valid():
             form.save()
-            username = form.cleaned_data.get('username')
 
             return redirect('student:login')
     else:
@@ -29,34 +25,32 @@ def signup(request):
     return render(request, 'signup.html', {'form': form})
 
 
-def login(request):
+# def login(request):
+#     if request.method == 'POST':
+#         username = request.POST['email']
+#         password1 = request.POST['password']
+#         user = authenticate(request, username=username, password=password1)
+#         if user is not None:
+#             login(request, user)
+#             return redirect('student:home')
+#         else:
+#             messages.warning(request, 'Please correct the error below.')
+#     return render(request, 'login.html')
 
-    if request.method == 'POST':
-        username = request.POST['email']
-        password1 = request.POST['password']
-        user = authenticate(username=username, password=password1)
-        if user is not None:
-            auth_login(request, user)
-            return redirect('student:home')
-        else:
-            messages.warning(request, 'Please correct the error below.')
-    return render(request, 'login.html')
-
-
+@login_required(login_url='login')
 def add(request):
-
     if request.method == 'POST':
-        form = StudentForm(request.POST,  request.FILES)
+        form = StudentForm(request.POST,request.FILES)
         if form.is_valid():
+            form.user = request.user.id
             form.save()
             return redirect('student:home')
     else:
         form = StudentForm()
     return render(request, 'add.html', {'form': form})
 
-
+@login_required(login_url='login')
 def update(request, pk):
-
     instance = get_object_or_404(Student, pk=pk)
     form = StudentForm(request.POST or None, request.FILES or None, instance=instance,)
     if form.is_valid():
@@ -64,7 +58,7 @@ def update(request, pk):
         return redirect('student:home')
     return render(request,'edit.html' , { 'form': form})
 
-
+@login_required(login_url='login')
 def delete(request, pk):
 
     show = Student.objects.get(pk = pk)

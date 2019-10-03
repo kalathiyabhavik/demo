@@ -25,19 +25,26 @@ function myFunction() {
                         <span class="sr-only">(current)</span>
                       </a>
                 </li>
+                 {% if not request.user.is_authenticated %}
                 <li class="nav-item">
-                  <a class="nav-link" href="#"></a>
+                  <a class="nav-link" href="{% url 'student:signup' %}"></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#"></a>
+                  <a class="nav-link" href="{% url 'login' %}"></a>
                 </li>
+                 {% else %}
                 <li class="nav-item">
                     <a href="{% url 'student:add' %}" class="nav-link">Add</a>
                 </li>
+                 {% endif %}
               </ul>
             </div>
           </div>
         </nav>
+
+
+
+
 
 {#    <!-- Full Page Image Header with Vertically Centered Content -->#}
 {#    <header class="masthead">#}
