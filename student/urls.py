@@ -23,9 +23,13 @@ app_name = 'student'
 
 urlpatterns = [
     path('', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
+    path('logout', auth_views.LogoutView.as_view(template_name='registration/logged_out.html'), name='logout'),
     path('home', views.home, name='home'),
     path('add', views.add, name='add'),
     path('update/<int:pk>/', views.update, name='update'),
     path('delete/<int:pk>/', views.delete,name='delete'),
-    path('signup', views.signup, name='signup')
+    path('signup', views.signup, name='signup'),
+    path('fees',views.fees, name='fees'),
+
+    path('showfees',views.showfees, name='showfees')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

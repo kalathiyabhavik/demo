@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <table class="table table-hover">
+      <thead>
+        <tr>
+{#          <th scope="col">No</th>#}
+          <th scope="col">Date</th>
+          <th scope="col">name</th>
+          <th scope="col">amount</th>
+          <th scope="col">time</th>
+          <th scope="col">Edit</th>
+          <th scope="col">Delete</th>
+
+
+        </tr>
+                {% for item in show %}
+      <tbody>
+        <tr>
+          <td>{{ item.date }}</td>
+          <td>{{ item.student.fname }}</td>
+          <td>{{ item.amount }}</td>
+          <td>{{ item.from_date }} to {{ item.to_date }}</td>
+            <td><a href="{% url 'student:update' item.pk %}" >Edit</a></td>
+          <td><a href="{% url 'student:delete' item.pk %}" onclick="myFunction()">Delete</a></td>
+        </tr>
+      </tbody>
+            {% endfor %}
+</table>
+{% endblock %}

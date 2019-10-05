@@ -1,15 +1,18 @@
 from django.shortcuts import render, redirect,  get_object_or_404
-from .forms import StudentForm
-from .models import Student
-from .forms import UserSignupForm
+from .forms import StudentForm,UserSignupForm,StudentFeesForm
+from .models import Student ,StudentFees
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+
+
 
 @login_required(login_url='login')
 def home(request):
     current_user = request.user.id
 
     show = Student.objects.filter(user = request.user.id)
-    return render(request, 'home.html', {'show': show , 'name': current_user})
+    # show = Student.objects.all()
+    return render(request, 'home.html', {'show': show})
 
 
 def signup(request):
@@ -38,16 +41,20 @@ def signup(request):
 #     return render(request, 'login.html')
 
 @login_required(login_url='login')
+
 def add(request):
+
     if request.method == 'POST':
-        form = StudentForm(request.POST,request.FILES)
+        form = StudentForm(request.POST,  request.FILES)
         if form.is_valid():
-            form.user = request.user.id
-            form.save()
+            f = form.save(commit=False)
+            f.user = request.user
+            f.save()
             return redirect('student:home')
     else:
         form = StudentForm()
     return render(request, 'add.html', {'form': form})
+
 
 @login_required(login_url='login')
 def update(request, pk):
@@ -56,7 +63,8 @@ def update(request, pk):
     if form.is_valid():
         form.save()
         return redirect('student:home')
-    return render(request,'edit.html' , { 'form': form})
+    return render(request, 'edit.html', {'form': form})
+
 
 @login_required(login_url='login')
 def delete(request, pk):
@@ -64,3 +72,25 @@ def delete(request, pk):
     show = Student.objects.get(pk = pk)
     show.delete()
     return redirect('student:home')
+
+
+@login_required(login_url='login')
+def fees(request):
+    if request.method == "POST":
+
+        form = StudentFeesForm(request.POST)
+        if form.is_valid():
+
+            form.save()
+            messages.success(request, 'done')
+            return redirect('student:showfees')
+    else:
+
+        form = StudentFeesForm()
+    return render(request, 'manage_fees.html', {'form': form})
+
+
+@login_required(login_url='login')
+def showfees(request):
+    show = StudentFees.objects.all()
+    return render(request,'show_fees.html', {'show': show})
