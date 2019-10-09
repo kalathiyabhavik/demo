@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55624b9f-422c-42a9-a132-c821e4b85aaf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/edite.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mydatabase" beforeDir="false" afterPath="$PROJECT_DIR$/mydatabase" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/student/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/student/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/student/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/manage_fees.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/manage_fees.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/show_fees.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/show_fees.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/student/migrations/0002_studentfees.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/student/migrations/0003_auto_20191004_1924.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/student/migrations/0004_auto_20191004_1938.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -111,15 +108,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/add.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
-              <caret line="40" column="10" selection-start-line="5" selection-start-column="2" selection-end-line="40" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1029">
@@ -140,8 +128,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/student/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="33" column="53" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
+            <state relative-caret-position="426">
+              <caret line="29" column="57" selection-start-line="29" selection-start-column="57" selection-end-line="29" selection-end-column="57" />
               <folding>
                 <element signature="e#628#665#0" expanded="true" />
               </folding>
@@ -226,7 +214,8 @@
             <path>
               <item name="demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="student" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -356,7 +345,7 @@
       <workItem from="1570221123309" duration="3350000" />
       <workItem from="1570288766142" duration="1727000" />
       <workItem from="1570362747070" duration="1511000" />
-      <workItem from="1570596740769" duration="4976000" />
+      <workItem from="1570596740769" duration="5277000" />
     </task>
     <task id="LOCAL-00001" summary="INIT TEST">
       <created>1568908153915</created>
@@ -400,15 +389,21 @@
       <option name="project" value="LOCAL" />
       <updated>1570288898897</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="INIT TEST">
+      <created>1570643700794</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1570643700794</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149551000" />
+    <option name="totallyTimeSpent" value="149852000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1621984" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -422,10 +417,10 @@
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32931727" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50067025" side_tool="true" weight="0.3480589" />
       <window_info anchor="bottom" id="Database Changes" order="11" weight="0.32931727" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49932975" visible="true" weight="0.31994644" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49932975" visible="true" weight="0.31860778" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.32931727" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -612,15 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://a8723685-065e-4475-837f-bec34f4c6328/schema/main/table/student_studentfees">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="73659268-5f29-4916-9c24-300b0f3567c1">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/edit.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -639,15 +625,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1029">
           <caret line="49" column="90" selection-start-line="49" selection-start-column="90" selection-end-line="49" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://a8723685-065e-4475-837f-bec34f4c6328/schema/main/table/student_student">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="c4b0f043-a612-44dd-9566-666c9a06fa13">
-          <filtering>
-            <filter text="" />
-          </filtering>
         </state>
       </provider>
     </entry>
@@ -702,10 +679,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://a8723685-065e-4475-837f-bec34f4c6328/schema/main/table/student_studentfees">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="c4b0f043-a612-44dd-9566-666c9a06fa13">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://a8723685-065e-4475-837f-bec34f4c6328/schema/main/table/student_student">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="c4b0f043-a612-44dd-9566-666c9a06fa13">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/student/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="33" column="53" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
+        <state relative-caret-position="426">
+          <caret line="29" column="57" selection-start-line="29" selection-start-column="57" selection-end-line="29" selection-end-column="57" />
           <folding>
             <element signature="e#628#665#0" expanded="true" />
           </folding>
