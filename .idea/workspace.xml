@@ -241,12 +241,12 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="G:\djangoProject\demo\templates\registration" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="G:\djangoProject\demo\templates" />
       <recent name="G:\djangoProject\demo\student" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\djangoProject\demo\templates\registration" />
     </key>
   </component>
   <component name="RunDashboard">
