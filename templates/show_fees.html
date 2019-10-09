@@ -21,8 +21,8 @@
           <td>{{ item.student.fname }}</td>
           <td>{{ item.amount }}</td>
           <td>{{ item.from_date }} to {{ item.to_date }}</td>
-            <td><a href="{% url 'student:update' item.pk %}" >Edit</a></td>
-          <td><a href="{% url 'student:delete' item.pk %}" onclick="myFunction()">Delete</a></td>
+            <td><a href="{% url 'student:feededit' item.pk %}" >Edit</a></td>
+          <td><a href="{% url 'student:feesdelete' item.pk %}" onclick="myFunction()">Delete</a></td>
         </tr>
       </tbody>
             {% endfor %}

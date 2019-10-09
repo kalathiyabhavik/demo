@@ -69,7 +69,7 @@ def update(request, pk):
 @login_required(login_url='login')
 def delete(request, pk):
 
-    show = Student.objects.get(pk = pk)
+    show = Student.objects.get(pk=pk)
     show.delete()
     return redirect('student:home')
 
@@ -80,7 +80,6 @@ def fees(request):
 
         form = StudentFeesForm(request.POST)
         if form.is_valid():
-
             form.save()
             messages.success(request, 'done')
             return redirect('student:showfees')
@@ -94,3 +93,21 @@ def fees(request):
 def showfees(request):
     show = StudentFees.objects.all()
     return render(request,'show_fees.html', {'show': show})
+
+
+@login_required(login_url='login')
+def feededit(request, pk):
+    instance = get_object_or_404(StudentFees, pk=pk)
+    form = StudentFeesForm(request.POST or None, instance=instance, )
+    if form.is_valid():
+        form.save()
+        return redirect('student:showfees')
+    return render(request, 'edite.html', {'form': form})
+
+
+@login_required(login_url='login')
+def feesdelete(request, pk):
+
+    show = StudentFees.objects.get(pk=pk)
+    show.delete()
+    return redirect('student:showfees')

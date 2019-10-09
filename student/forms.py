@@ -19,4 +19,4 @@ class UserSignupForm(UserCreationForm):
 class StudentFeesForm(forms.ModelForm):
     class Meta:
         model = StudentFees
-        fields = ['date','from_date','to_date','amount','comment','student  ']
+        fields = ['date', 'from_date', 'to_date', 'amount', 'comment','student']

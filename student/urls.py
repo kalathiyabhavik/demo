@@ -30,6 +30,7 @@ urlpatterns = [
     path('delete/<int:pk>/', views.delete,name='delete'),
     path('signup', views.signup, name='signup'),
     path('fees',views.fees, name='fees'),
-
-    path('showfees',views.showfees, name='showfees')
+    path('feededit/<int:pk>/',views.feededit, name='feededit'),
+    path('showfees',views.showfees, name='showfees'),
+    path('feesdelete/<int:pk>/',views.feesdelete, name='feesdelete')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
